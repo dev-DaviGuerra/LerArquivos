@@ -6,9 +6,9 @@
 //resource = recurso
 
 $arquivo = fopen("nomes.txt", "r");
-if($arquivo){
-    echo "Arquivo aberto com sucesso";
-    fclose($arquivo);
-}   else{
-    echo "Erro ao abrir o arquivo";
-}
+
+//ler o conteúdo do arquivo
+$nomes = fread($arquivo, 5);
+print_r($nomes);
+
+fclose($arquivo);
