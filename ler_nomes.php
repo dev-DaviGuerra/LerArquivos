@@ -7,8 +7,12 @@
 
 $arquivo = fopen("nomes.txt", "r");
 
+$bytes = filesize('nomes.txt');
+
 //ler o conteúdo do arquivo
-$nomes = fread($arquivo, 5);
-print_r($nomes);
+
+while(($linha = fgets($arquivo, $bytes)) !== false) {
+            echo "$linha</br>";
+        }
 
 fclose($arquivo);
