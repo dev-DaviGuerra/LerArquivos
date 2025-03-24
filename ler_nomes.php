@@ -5,17 +5,14 @@
 //read (ler) - r
 //resource = recurso
 //eof = end of file (fim do arquivo)
+//fwrite - write (escrever)
+//truncar - truncate (truncar) -> "w"
+//append - append (acrescentar)
 
-$arquivo = fopen("nomes.txt", "r");
+$arquivo = fopen("nomes.txt", "a");
 
-$bytes = filesize('nomes.txt');
+fwrite($arquivo, "\n");
+fwrite($arquivo, 'Cristiano');
 
-//ler o conteúdo do arquivo
-
-while(!feof($arquivo)){
-    $nome = fgets($arquivo);
-    echo $nome;
-    echo '</br>';
-}
 
 fclose($arquivo);
